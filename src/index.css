@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-primary: #2D2D2D;
+  --color-secondary: #5A5A5A;
+  --color-surface: #FFFFFF;
+  --color-background: #F8F8F8;
+  --color-divider: #000000;
+  --elevation-1: 0 2px 8px rgba(45,45,45,0.1);
+  --elevation-2: 0 4px 12px rgba(45,45,45,0.15);
+}
+
 @layer utilities {
   .rtl {
     direction: rtl;
@@ -10,7 +20,7 @@
   
   .scrollbar-thin {
     scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 #f8fafc;
+    scrollbar-color: var(--color-secondary) var(--color-background);
   }
   
   .scrollbar-thin::-webkit-scrollbar {
@@ -18,25 +28,19 @@
   }
 
   .scrollbar-thin::-webkit-scrollbar-track {
-    @apply bg-gray-50 rounded-full;
+    @apply bg-background rounded-full;
   }
 
   .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+    @apply bg-secondary rounded-full;
   }
 
   @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
   .animate-fade-in-up {
-    animation: fade-in-up 0.3s ease-out;
+    animation: fade-in-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
