@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #2D2D2D;
-  --color-secondary: #5A5A5A;
-  --color-surface: #FFFFFF;
-  --color-background: #F8F8F8;
+  --color-primary: #2d2d2d;
+  --color-secondary: #5a5a5a;
+  --color-surface: #ffffff;
+  --color-background: #f8f8f8;
   --color-divider: #000000;
-  --elevation-1: 0 2px 8px rgba(45,45,45,0.1);
-  --elevation-2: 0 4px 12px rgba(45,45,45,0.15);
+  --elevation-1: 0 2px 8px rgba(45, 45, 45, 0.1);
+  --elevation-2: 0 4px 12px rgba(45, 45, 45, 0.15);
 }
 
 @layer utilities {
@@ -17,12 +17,12 @@
     direction: rtl;
     text-align: right;
   }
-  
+
   .scrollbar-thin {
     scrollbar-width: thin;
     scrollbar-color: var(--color-secondary) var(--color-background);
   }
-  
+
   .scrollbar-thin::-webkit-scrollbar {
     @apply w-2;
   }
@@ -36,11 +36,24 @@
   }
 
   @keyframes fade-in-up {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .animate-fade-in-up {
     animation: fade-in-up 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Adjust the arrow position for desktop view */
+@media (min-width: 768px) {
+  .select-arrow {
+    margin-left: 8px; /* Move the arrow slightly to the right */
   }
 }
